@@ -1,0 +1,77 @@
+﻿<Window x:Class="TaskManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TaskManager"
+        mc:Ignorable="d"
+        Title="TaskManager" MinHeight="415" MinWidth="650" 
+        Height="415" Width="650">
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="Button">
+                <Setter Property="Padding" Value="3"/>
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="1.5*" />
+            <ColumnDefinition Width="1.5*" />
+        </Grid.ColumnDefinitions>
+        <GroupBox Header="Настройки подключения" Grid.Row="0" Grid.Column="0" 
+                  Grid.ColumnSpan="3">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Label Content="IP:" />
+                <TextBox x:Name="IpField" MinWidth="150" HorizontalContentAlignment="Center"
+                         Text="127.0.0.1"/>
+                <Label Content="Port:" />
+                <TextBox x:Name="PortField" MinWidth="150" HorizontalContentAlignment="Center"
+                         Text="9001"/>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Управление сервисом" Grid.Row="1" Grid.Column="0">
+            <StackPanel>
+                <Label Content="Login:" />
+                <TextBox x:Name="LoginField" Text="admin" />
+                <Label Content="Password:" />
+                <PasswordBox x:Name="PasswordField" Password="admin123" />
+                <Button x:Name="ConnectButton" Margin="5 10 5 0" Click="ConnectButton_Click">Подключиться</Button>
+                <Button x:Name="DisconnectButton" Margin="5" IsEnabled="False" Click="ConnectButton_Click">Отключиться</Button>
+                <Button x:Name="AddButton" Margin="5 10 5 3" IsEnabled="False" Click="AddButton_Click">Добавить задачу</Button>
+                <Button x:Name="DelButton" Margin="3" IsEnabled="False" Click="DelButton_Click">Удалить задачу</Button>
+                <Button x:Name="SaveButton" Margin="3" IsEnabled="False">Сохранить задачу</Button>
+                <Button x:Name="ClearButton" Margin="3" IsEnabled="False">Очистить поля</Button>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Список задач" Grid.Row="1" Grid.Column="1">
+            <StackPanel>
+                <ListBox x:Name="TasksList" Height="305" />
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Параметры задачи" Grid.Row="1" Grid.Column="2">
+            <StackPanel>
+                <Label Content="Заголовок"/>
+                <TextBox x:Name="TitleField" />
+                <Label Content="Описание"/>
+                <TextBox x:Name="AboutField" Height="75" TextWrapping="Wrap" 
+                         AcceptsReturn="True" VerticalScrollBarVisibility="Visible" />
+                <Label Content="Начало"/>
+                <DatePicker x:Name="StartTask" />
+                <Label Content="Завершение"/>
+                <DatePicker x:Name="FinishTask" />
+                <Label Content="Статус"/>
+                <ComboBox x:Name="StatusList" SelectedIndex="0">
+                    <ComboBoxItem Content="Запланирована"/>
+                    <ComboBoxItem Content="В процессе"/>
+                    <ComboBoxItem Content="Отложена"/>
+                    <ComboBoxItem Content="На проверке"/>
+                    <ComboBoxItem Content="Выполнена"/>
+                </ComboBox>
+            </StackPanel>
+        </GroupBox>
+    </Grid>
+</Window>

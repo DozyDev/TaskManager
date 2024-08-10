@@ -1,0 +1,39 @@
+﻿<Window x:Class="TaskManager_Server.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TaskManager_Server"
+        mc:Ignorable="d"
+        Title="TaskManager_Server" Height="400" Width="525">
+    <DockPanel>
+        <DockPanel.Resources>
+            <Style TargetType="Button">
+                <Setter Property="Width" Value="200" />
+            </Style>
+        </DockPanel.Resources>
+        <GroupBox DockPanel.Dock="Top" Header="Настройки подключения" Padding="10">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Label Content="IP:" />
+                <TextBox x:Name="IpField" MinWidth="150" HorizontalContentAlignment="Center"
+                         Text="127.0.0.1"/>
+                <Label Content="Port:" />
+                <TextBox x:Name="PortField" MinWidth="150" HorizontalContentAlignment="Center"
+                         Text="9001"/>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox DockPanel.Dock="Top" Header="Управление сервером" Padding="5">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="TurnOnButton" Margin="5" Click="TurnOnButton_Click">Включить сервер</Button>
+                <Button x:Name="TurnOffButton" Margin="5" IsEnabled="False"
+                        Click="TurnOffButton_Click">Выключить сервер</Button>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Журнал событий">
+            <StackPanel>
+                <TextBox x:Name="JournalBox" VerticalScrollBarVisibility="Visible"
+                         IsReadOnly="True" Height="200"/>
+            </StackPanel>
+        </GroupBox>
+    </DockPanel>
+</Window>

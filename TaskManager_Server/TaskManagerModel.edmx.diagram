@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="94de8f9323ed42cabf960a743f62aba2" Name="Diagram1">
+        <EntityTypeShape EntityType="TaskManagerModel.Statuses" Width="1.5" PointX="6.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaskManagerModel.Tasks" Width="1.5" PointX="3.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="TaskManagerModel.Users" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <AssociationConnector Association="TaskManagerModel.Tasks_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="TaskManagerModel.Tasks_fk1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
